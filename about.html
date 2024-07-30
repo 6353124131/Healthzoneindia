@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Your Health Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Basic CSS for buttons and layout - Modify as needed */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        main {
+            padding: 0px;
+        }
+
+        .about-section {
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button,
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .contact-button {
+            background-color: #28a745;
+        }
+
+        .back-button:hover,
+        .contact-button:hover {
+            background-color: #0056b3;
+        }
+
+        .back-button:active,
+        .contact-button:active {
+            background-color: #0056b3;
+            transform: translateY(1px);
+        }
+
+        .left {
+            position: absolute;
+            left: 34px;
+            top: 20px;
+
+        }
+
+
+
+
+
+
+
+        .left img {
+            width: 149px;
+            height: 134px;
+        }
+
+        .left div {
+            text-align: center;
+            font-size: 19px;
+            font-weight: bold;
+        }
+
+
+
+
+        .btn {
+            margin: 23px 8px;
+            padding: 4px 14px;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: rgb(1, 1, 245);
+            border: 2px solid gold;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: rgb(55, 55, 186);
+        }
+
+        h1 {
+            text-align: center;
+            margin: 12px 303px;
+        }
+
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #3e64ff;
+            color: #fff;
+
+
+
+        }
+
+
+
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: inherit;
+        }
+
+        .column {
+            float: left;
+            width: 33.3%;
+            margin-bottom: 16px;
+            padding: 0 8px;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            margin: 8px;
+        }
+
+        .about-section {
+            padding: 50px;
+            text-align: center;
+            background-color: transparent;
+            color: black;
+        }
+
+        .container {
+            padding: 0 16px;
+            color: black;
+        }
+
+        .container::after,
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .title {
+            color: grey;
+        }
+
+        .button {
+            text-decoration: none;
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: rgb(1, 1, 245);
+            border: 2px solid gold;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: rgb(55, 55, 186);
+        }
+
+        /* @media screen and (max-width: 650px) {
+            .column {
+                width: 70%;
+                display: block;
+            }
+        } */
+
+        h2 {
+            color: lightsalmon;
+        }
+
+        .nirdesh1 {
+            color: black;
+            background-color: khaki;
+            border: 2px solid chocolate;
+            text-align: center;
+            justify-content: center;
+            width: 910px;
+            margin-left: 59px;
+            padding: 2px 12px;
+            margin-top: 43px;
+        }
+
+        .dis {
+            color: rgb(211, 69, 69);
+            text-align: left;
+        }
+
+        /* Add media queries for responsiveness */
+        @media only screen and (min-width: 768px) {
+            /* .column {
+                width: 100%;
+                display: block;
+            } */
+
+        }
+
+        @media only screen and (min-width: 480px) {
+            /* .column {
+                width: 100%;
+                display: block;
+            } */
+
+        }
+
+        .footer {
+            background-color: #333;
+            padding: 70px;
+            margin: auto;
+            text-align: center;
+            padding-top: 25px;
+            padding-bottom: 15px;
+        }
+
+        .footer p {
+            color: #fff7f7;
+
+            text-align: center;
+            padding-top: 30px;
+        }
+
+        .social-icons .fa {
+            display: inline-block;
+            margin: 0 10px;
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            line-height: 40px;
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-icons .fa:hover {
+            background-color: #ff8c00;
+        }
+
+        .fa.fa-facebook {
+            background-color: #3b5998;
+        }
+
+        .fa.fa-twitter {
+            background-color: #1da1f2;
+        }
+
+        .fa.fa-instagram {
+            background-color: #e4405f;
+        }
+
+        .fa.fa-linkedin {
+            background-color: #0077b5;
+        }
+
+        .fa.fa-youtube {
+            background-color: #d41f1f;
+        }
+
+        header {
+            background-color: #3e64ff;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #57c757;
+            color: #fff;
+        }
+
+        img {
+            width: 61px;
+            height: 57px;
+        }
+
+        .primary-btn {
+            background-color: #ff5252;
+            color: #fff;
+        }
+
+        .primary-btn:hover {
+            background-color: #dc5d5d;
+            ;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="nirdesh">
+
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="about.html" target="_blank">About</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="/contect.html" target="_blank">Contact</a></li>
+                <li><a href="/login.html" target="_blank">Login</a></li>
+
+
+
+            </ul>
+        </nav>
+        <main>
+    </header>
+    <section class="hero">
+
+
+        <img src="/Health1.png" alt="">
+
+
+
+        <h1>Welcome to Our Website Healthzone india</h1>
+        <p>Get the latest information and services for a healthy lifestyle.</p>
+        <button class="btn primary-btn">Learn More</button>
+    </section>
+
+    <div class="about-section">
+        <h1>About Us</h1>
+        <p>Some text about who we are and what we do.</p>
+        <p>Resize the browser window to see that this page is responsive by the way.</p>
+    </div>
+
+    <h2 style="text-align:center">Our Team</h2>
+    <div class="row">
+        <div class="column">
+            <div class="card">
+                <img src="/male dammy doctor.jpg" alt="Dr.this-1" style="width:100%">
+                <div class="container">
+                    <h2>Dr.this-1</h2>
+                    <p class="title">Psychiatry</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>Dr.this-1@example.com</p>
+                    <p><a href="/contectdr.this-1.html" class="button" target="_blank">Contact</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="/male dammy doctor.jpg" alt="Dr.this-2" style="width:100%">
+                <div class="container">
+                    <h2>Dr.this-2</h2>
+                    <p class="title"> Family Medician</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>Dr.this-2@example.com</p>
+                    <p><a href="/contectdr.this-2.html" class="button" target="_blank" id="box">Contact</a></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="column">
+            <div class="card">
+                <img src="/male dammy doctor.jpg" alt="Dr.this-3" style="width:100%">
+                <div class="container">
+                    <h2>Dr.this-3</h2>
+                    <p class="title">Otolaryngology</p>
+                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+                    <p>
+                        <Dr class="this-3"></Dr>@example.com
+                    </p>
+                    <p><a href="/contectdr.this-3.html" target="_blank" class="button">Contact</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nirdesh1">
+        <h1>1.Psychiatry</h1>
+        <h3 class="dis">Dr.this-1</h3>
+        <p>Not only does psychiatry as a medical specialty pay well, but it also offers a shorter work week than other
+            specialties. Psychiatrists are highly in-demand across Canada, and since it’s one of the only medical
+            specialties that can take their practice fully virtual, it can offer you a lot in terms of flexibility as
+            well. Since 72% of psychiatrists are satisfied with their professional lives, psychiatry might be one of the
+            best medical specialties for work life balance in general.</p>
+
+    </div>
+    <div class="nirdesh1">
+        <h1>2.Family Medician</h1>
+        <h3 class="dis">Dr.this-2</h3>
+        <p>Family medicine is the primary care specialty in Canada. Family doctors in Canada focus on caring for the
+            community as a whole. Thanks to its direct work with patients, it is one of the most fulfilling specialties,
+            especially if you like interacting with people. In the nature.com review of literature on physician
+            happiness, family medicine professionals (especially male ones) were some of the happiest doctors overall.
+        </p>
+
+    </div>
+    <div class="nirdesh1">
+        <h1>3.Otolaryngology</h1>
+        <h3 class="dis">Dr.this-3</h3>
+        <p>Even though it sounds like a mouthful, otolaryngologists actually specialize in the ears, nose, and throat.
+            And as of the 2022 Medscape study, these head and neck specialists are the most likely to report happy
+            marriages.
+
+            According to the CMA, otolaryngologists work relatively stable working hours (at around 60 hours per week)
+            and earn around $318,950 a year after overhead. With 65% of them satisfied with their current professional
+            life, and almost half of them satisfied with their work life balance, otolaryngologists have the potential
+            to be one of the most satisfied physicians overall.</p>
+
+    </div>
+
+    <div class="buttons">
+        <a href="ni.html" class="back-button">Back</a>
+        <a href="contact.html" class="contact-button">Contact Us</a>
+    </div>
+    </main>
+    <br>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <p>&copy; 2024 Healthzone India. All rights reserved. <br> Address: Priyam Ayurveda Hospital-Ahmedabad Phone
+                No.:6353124131</p>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>

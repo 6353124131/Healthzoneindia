@@ -1,0 +1,151 @@
+<html>
+<head>
+  <title>Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    .footer {
+      background-color: #333;
+      padding: 70px;
+      margin: auto;
+      text-align: center;
+      padding-top: 25px;
+      padding-bottom: 15px;
+    }
+
+    .footer p {
+      color: #fff7f7;
+      text-align: center;
+      padding-top: 30px;
+    }
+
+    .social-icons .fa {
+      display: inline-block;
+      margin: 0 10px;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      line-height: 40px;
+      text-align: center;
+      color: #fff;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-icons .fa:hover {
+      background-color: #ff8c00;
+    }
+
+    .fa.fa-facebook {
+      background-color: #3b5998;
+    }
+
+    .fa.fa-twitter {
+      background-color: #1da1f2;
+    }
+
+    .fa.fa-instagram {
+      background-color: #e4405f;
+    }
+
+    .fa.fa-linkedin {
+      background-color: #0077b5;
+    }
+
+    .fa.fa-youtube {
+      background-color: #d41f1f;
+    }
+  </style>
+</head>
+<body class="bg-green-400">
+  <header>
+    <nav class="bg-green-600 text-white flex justify-between items-center p-4">
+      <img src="/Health1.png" class="w-11 h-11" alt="Health Logo">
+      <p class="text-center">Welcome to Healthzone India</p>
+    </nav>
+  </header>
+  <br>
+  <h3 class="text-red-600 mx-4 md:mx-80">After submitting details, please login with Google...</h3>
+  <div class="box flex justify-center">
+    <div class="form bg-blue-400 p-6 md:flex md:mx-52 my-14 rounded-2xl w-full md:w-auto">
+      <h2 class="font-bold py-7 pt-28 text-3xl text-white text-center md:mx-28">Login</h2>
+      <form id="myForm" class="w-full md:w-auto">
+        <div class="inputbox">
+          <label for="username" class="font-bold mx-5">Username</label><br>
+          <input class="px-11 py-2 rounded-2xl mx-4 w-full md:w-auto" type="text" id="username" required>
+        </div>
+        <br>
+        <div class="inputbox">
+          <label for="email" class="font-bold mx-5">Email</label><br>
+          <input class="px-11 py-2 rounded-2xl mx-4 w-full md:w-auto" type="email" id="email" required>
+        </div>
+        <br>
+        <div class="inputbox">
+          <label for="phone" class="font-bold mx-5">Phone Number</label><br>
+          <input class="px-11 py-2 rounded-2xl mx-4 w-full md:w-auto" type="text" id="phone" required>
+        </div>
+        <br>
+        <input class="bg-red-700 text-white py-1 px-2 font-bold rounded-2xl hover:text-slate-900 hover:bg-red-300 mx-4 cursor-pointer" type="submit" value="Submit" id="submit">
+        <button class="fa fa-google bg-green-600 text-white py-2 px-3 font-bold rounded-2xl hover:text-slate-900 hover:bg-green-300 mx-1 cursor-pointer" type="button" id="signUp"> Sign In With Google</button>
+      </form>
+    </div>
+  </div>
+  <br>
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-youtube"></a>
+    </div>
+    <p>&copy; 2024 Healthzone India. All rights reserved. <br> Address: Priyam Ayurveda Hospital-Ahmedabad Phone:+91 6353124131</p>
+  </footer>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+    import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyACoK4MatMyD1ML5Y8vjRgAvL3Pr6tjpno",
+      authDomain: "healthzone-india-dd2cd.firebaseapp.com",
+      databaseURL: "https://healthzone-india-dd2cd-default-rtdb.firebaseio.com",
+      projectId: "healthzone-india-dd2cd",
+      storageBucket: "healthzone-india-dd2cd.appspot.com",
+      messagingSenderId: "564335157599",
+      appId: "1:564335157599:web:499a55a6d7559abaf4d6ea",
+      measurementId: "G-Y8S8D8S1YR"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const auth = getAuth(app);
+    const btnsubmit = document.getElementById('submit');
+
+    btnsubmit.addEventListener('click', function (e) {
+      e.preventDefault();
+      set(ref(db, 'user/' + document.getElementById("username").value), {
+        username: document.getElementById("username").value,
+        email: document.getElementById("email").value,
+        PhoneNumber: document.getElementById("phone").value
+      });
+      alert("Your data has been added successfully to the Firebase Realtime Database!");
+      document.getElementById('myForm').reset();
+    });
+    
+    const btnsignup = document.getElementById("signUp");
+
+    btnsignup.addEventListener('click', function (e) {
+      e.preventDefault();
+      const googleAuth = new GoogleAuthProvider();
+      signInWithPopup(auth, googleAuth).then((result) => {
+        console.log(result);
+        window.location.href = './index.html';
+      }).catch((error) => {
+        console.error(error);
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* background: url(/Health.jpg); */
+    background-size: cover;
+    font-weight: bold;
+    background-repeat: no-repeat;
+}
+
+.box {
+    padding: 20px;
+    width: 90%; /* Adjust width for smaller screens */
+    max-width: 400px; /* Set a maximum width */
+    height: auto;
+    backdrop-filter: invert(10%);
+    border-radius: 5px;
+    background: rgba(49, 49, 49, .2);
+    border: 1px solid rgba(255, 255, 255, .5);
+}
+
+.box .form {
+    padding: 10px 20px;
+}
+
+.box .form h2 {
+    text-align: center;
+    color: #fff;
+}
+
+.box .form form {
+    margin-top: 20px; /* Adjust margin for smaller screens */
+    align-items: center;
+}
+
+.box .form form .inputbox input {
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background: none;
+    border-bottom: 4px solid #12151e;
+    margin-bottom: 15px; /* Adjust margin for smaller screens */
+    color: #f8ff2f;
+}
+
+.box .form form .inputbox span {
+    position: absolute;
+    transform: translateY(-80px);
+    font-size: 14px;
+    color: #fff;
+}
+
+.box .form form .sub {
+    padding: 10px 20px;
+    color: #fff;
+    border: none;
+    outline: none;
+    background: #0cc0df;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .box {
+        width: 90%;
+        max-width: 100%;
+    }
+}

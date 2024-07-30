@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Website</title>
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="about.html" target="_blank">About</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="/contect.html" target="_blank">Contact</a></li>
+        <li><a href="/login.html" target="_blank">Login</a></li>
+       
+      
+        <!-- <li class="fa fa-search" id="nir"><input type="search" placeholder="search..." class="search" ></li> -->
+    
+        
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      
+ 
+      <img src="/Health1.png" alt="">
+     
+      
+      
+      <h1>Welcome to Our Website Healthzone india</h1>
+      <p>Get the latest information and services for a healthy lifestyle.</p>
+      <button class="btn primary-btn">Learn More</button>
+    </section>
+
+
+ 
+
+
+    <section class="services">
+      <h2>Our Services</h2>
+      <p>Explore our range of health services:</p>
+      <button class="btn secondary-btn">Service 1</button>
+      <button class="btn secondary-btn">Service 2</button>
+      <button class="btn secondary-btn">Service 3</button>
+    </section>
+
+    <section class="blog">
+      <h2>Latest Blog Posts</h2>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Up</button>
+      <div class="blog-posts">
+        <!-- Blog posts will be dynamically loaded here using JavaScript -->
+      </div>
+    </section><br>
+   
+  </main>
+
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
+      <a href="#" class="fa fa-linkedin"></a>
+      <a href="#" class="fa fa-youtube"></a>
+      <p>&copy; 2024 Healthzone India. All rights reserved. <br> Address: Priyam Ayurveda Hospital-Ahmedabad   Phone:+91 6353124131</p>
+    </div>
+  </footer>
+  
+
+  <script>
+    // Simulating dynamic content loading for blog posts
+document.addEventListener("DOMContentLoaded", function () {
+  const blogPosts = [
+    "Post 1: Content about health",
+    "Post 2: Tips for a healthy lifestyle",
+    "Post 3: Importance of exercise",
+  ];
+
+  const blogContainer = document.querySelector(".blog-posts");
+
+  blogPosts.forEach((post) => {
+    const postElement = document.createElement("p");
+    postElement.textContent = post;
+    blogContainer.appendChild(postElement);
+  });
+});
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+
+
+  </script>
+</body>
+</html>
